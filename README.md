@@ -1,8 +1,3 @@
-[blocks-editor](https://blocks-editor.gatunes.com/)
-==
-
-[![screenshot](screenshot.png)](https://blocks-editor.gatunes.com/)
-
 #### Usage examples
 
  * [blocks-editor-examples](https://github.com/danielesteban/blocks-editor-examples) A combined set of examples
@@ -16,8 +11,6 @@
 #### Local development
 
 ```bash
-# clone this repo
-git clone https://github.com/danielesteban/blocks-editor.git
 cd blocks-editor
 # install dependencies
 npm install
@@ -25,3 +18,7 @@ npm install
 npm start
 # open http://localhost:8080/ in your browser
 ```
+
+#### Credit
+
+Based on [blocks-editor](https://github.com/danielesteban/blocks-editor).
