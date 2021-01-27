@@ -48,6 +48,7 @@ export default [
           { src: 'screenshot.png', dest: 'dist' },
           { src: 'src/index.html', dest: 'dist' },
           { src: 'src/index.css', dest: 'dist' },
+          { src: 'src/favicon.ico', dest: 'dist' },
         ],
       }),
       ...(production ? (
