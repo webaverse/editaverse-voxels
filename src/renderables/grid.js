@@ -27,7 +27,7 @@ class Grid extends Mesh {
       fragmentShader: [
         'varying vec2 gridPosition;',
         'varying vec3 fragPosition;',
-        'const vec3 chunkColor = vec3(0.0, 0.7, 0.0);',
+        'const vec3 chunkColor = vec3(0, 0, 0);',
         'const vec3 voxelsColor = vec3(0.7);',
         'const float fogDensity = 0.02;',
         'uniform vec3 fogColor;',
@@ -36,7 +36,7 @@ class Grid extends Mesh {
         '  return 1.0 - min(min(coord.x, coord.y), 1.0);',
         '}',
         'void main() {',
-        '  vec3 grid = chunkColor * line(gridPosition / 16.0) + voxelsColor * line(gridPosition);',
+        '  vec3 grid = chunkColor * line(gridPosition / 30.0) + voxelsColor * line(gridPosition);',
         '  float fogDepth = length(fragPosition);',
         '  float fogFactor = 1.0 - exp( - fogDensity * fogDensity * fogDepth * fogDepth );',
         '  gl_FragColor = vec4(mix(grid, fogColor, fogFactor), 1.0);',

@@ -83,7 +83,7 @@
   }
 
   blockType.selected {
-    background: #363;
+    background: #c4005d;
   }
 
   texture {

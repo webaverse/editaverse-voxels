@@ -1,7 +1,6 @@
 <script>
   import { tick } from 'svelte';
   import Link from './components/link.svelte';
-  import Sponsor from './components/sponsor.svelte';
   import Main from './routes/main.svelte';
   import router from './stores/router';
   import 'codemirror/mode/javascript/javascript';
@@ -32,30 +31,8 @@
       {...($router.params ? { params: $router.params } : {})}
     />
   </route>
-  <toolbar>
-    <div>
-      <brand>
-        <Link path="/">
-          blocks-editor
-        </Link>
-      </brand>
-    </div>
-    <div>
-      <github>
-        <a href="https://github.com/danielesteban/blocks-editor" rel="noopener noreferrer" target="_blank">
-          view source
-        </a>
-      </github>
-      <credits>
-        <a href="https://dani.gatunes.com/" rel="noopener noreferrer" target="_blank">
-          dani@gatunes
-        </a> © 2020
-      </credits>
-    </div>
-  </toolbar>
 </app>
 
-<Sponsor />
 
 <style>
   app {
@@ -65,7 +42,7 @@
 
   route {
     display: block;
-    height: calc(100vh - 40px);
+    height: 100vh;
     overflow: overlay;
   }
 
