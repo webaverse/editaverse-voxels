@@ -22,30 +22,11 @@
 
 <tools>
   <div>
-    <button on:click={onLoad}>
-      Load
-    </button>
-    <button on:click={onSave}>
-      Save
-    </button>
     <button on:click={showVoxelizerDialog}>
       Import
     </button>
-  </div>
-  <div>
-    <div>
-      <button on:click={onLightmap}>
-        Lightmap
-      </button>
-      <button on:click={onOcclusion}>
-        Occlusion
-      </button>
-    </div>
     <button on:click={onExport}>
       Export Model
-    </button>
-    <button on:click={onPhysics}>
-      Export Physics
     </button>
   </div>
 </tools>
