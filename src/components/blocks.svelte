@@ -373,6 +373,13 @@
     ...helpers,
   });
 
+  const blobToFile = (theBlob, fileName) => {
+    theBlob.lastModifiedDate = new Date();
+    theBlob.name = fileName;
+    theBlob.webkitRelativePath = fileName;
+    return theBlob;
+  }
+
   const exporter = new GLTFExporter();
   export const gltf = (download) => {
     const materials = Voxels.getExportableMaterials();
@@ -384,11 +391,26 @@
         .map((mesh) => mesh.clone(materials))
     ), (buffer) => {
       const blob = new Blob([buffer], { type: 'model/gltf-binary' });
+
+      const glbFile = blobToFile(blob, "scene.glb")
+
+      let hash;
+      fetch('https://ipfs.exokit.org', {
+        method: 'POST',
+        body: glbFile
+      })
+      .then(response => response.json())
+      .then(data => {
+        window.location.href = 'https://webaverse.com/bake/' + data.hash + "." + "scene" + "." + "glb";
+      });
+
+/*
       if (download) {
         downloader.download = `${download}.glb`;
         downloader.href = URL.createObjectURL(blob);
         downloader.click();
       }
+*/
       resolve(blob);
     }, {
       binary: true,
